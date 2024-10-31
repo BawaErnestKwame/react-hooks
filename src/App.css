@@ -19,3 +19,7 @@ button:hover{
     background-color: blanchedalmond;
     color: #000;
 }
+
+p{
+    font-size: 25px;
+}

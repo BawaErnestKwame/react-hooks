@@ -1,25 +1,20 @@
-import React, { useState } from 'react'
+
+import { useEffect, useState } from 'react'
 import './App.css'
 
 const App = () => {
-  const[count, setCount] = useState(0)
+  const [count, setCount] = useState(0)
 
-  const increaseCount = ()=>{
-    setCount(count +1);
-  }
-  const decreaseCount = ()=>{
-    setCount(count -1);
-  }
+  useEffect(()=>{
+    setTimeout(()=>{
+      setCount(count => count+1)
+    },2000)
+  },[count, name])
 
-  const resetCount = ()=>{
-    setCount((count)=> count= 0 );
-  }
   return (
     <div>
-      <h1>Count : {count}</h1>
-      <button onClick={increaseCount}>Increase</button>
-      <button onClick={decreaseCount}>decrease</button>
-      <button onClick={resetCount}>reset</button>
+      <p>I've Rendered {count} times! </p>
+      
 
       
     </div>
